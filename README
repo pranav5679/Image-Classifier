@@ -1,0 +1,105 @@
+This README file provides the documentation of how to use this program, which parts of the program
+are complete, design changes and justifications, and citations for all images.
+
+How to use this program:
+------------------------
+This program can accept three command-line inputs in the terminal that lead to different versions of
+the image processing software:
+1. java -jar Program.jar -script path-of-script-file
+2. java -jar Program.jar -interactive
+3. java -jar Program.jar -text
+
+For 1.,
+- this command-line input can take in a .txt file in place of the "path-of-script-file" token, and
+the program automatically reads through the lines while apply the appropriate command for each line.
+
+For 2.,
+- this command-line input opens up a GUI where the user can interact with the available options
+laid out in the menus
+
+For 3.,
+- this command-line input opens up a new line in the terminal marked by a ">>" where the user
+can input a command line that the program can read in order to run it.
+
+What parts of the program are complete:
+---------------------------------------
+For the GUI,
+- most of the command options in both menus can modify the state of the multilayer image structure,
+except for the "Delete Layer" option.
+
+For the Script,
+- all of the command options can return a success prompt, just as long as there is no file that the
+script is calling that already exists in the res/ folder.
+
+For the Text,
+- similar to the Script, all of the command options can return a success prompt, just as long as
+there is no file that the script is calling that already exists in the res/ folder.
+
+Design changes and justifications:
+---------------------------------
+One new sub-packages is created:
+- processor
+
+For the processor sub-package,
+- the IProcessor interface provides an definition for a processor.
+- the Processor subclass implements IProcessor to provide functionality for a processor.
+- the GUIProcessor subclass extends Processor to specify certain functionalities for a GUI that
+differs from the other subclasses.
+- the ScriptProcessor subclass extends Processor to specify certain functionalities for a Script
+that differs from the other subclasses.
+- the TextProcessor subclass extends Processor to specify certain functionalities for a Text that
+differs from the other subclasses.
+- the ProcessorFactory is a singleton class used to instantiate the processor sub-package based on
+keywords.
+
+The model, controller, and view sub-packages all have extensive changes regarding the object classes
+each one contains:
+
+For the model sub-package,
+- the IModel interface provides an definition for a model object.
+- the Model subclass implements IModel to provide functionality for a model.
+- the GUIModel subclass extends Model to specify certain functionalities for a GUI that
+differs from the other subclasses.
+- the ScriptModel subclass extends Model to specify certain functionalities for a Script
+that differs from the other subclasses.
+- the TextModel subclass extends Model to specify certain functionalities for a Text that
+differs from the other subclasses.
+
+For the controller sub-package,
+- the IController interface provides an definition for a controller object.
+- the Controller subclass implements IController to provide functionality for a controller.
+- the GUIController subclass extends Controller to specify certain functionalities for a GUI that
+differs from the other subclasses.
+- the ScriptController subclass extends Controller to specify certain functionalities for a Script
+that differs from the other subclasses.
+- the TextController subclass extends Controller to specify certain functionalities for a Text that
+differs from the other subclasses.
+
+
+For the view sub-package,
+- the IView interface provides an definition for a view object.
+- the abstract View subclass implements IView to provide functionality for a view.
+- the GUIView subclass extends View to specify certain functionalities for a GUI that
+differs from the other subclasses.
+- the ScriptView subclass extends View to specify certain functionalities for a Script
+that differs from the other subclasses.
+- the TextView subclass extends View to specify certain functionalities for a Text that
+differs from the other subclasses.
+
+Justifications:
+- before this assignment, there was no concrete model object or controller object, which makes it
+difficult to call out to methods that require the model, controller, and view subclass to reach data
+that is only contained in each others classes.
+- the processor is created as a call-and-response medium where once a piece of data goes from one
+sub-package to another, it is going to prompt a reaction to that.
+- since there are three versions of the image processing software, the extensions created from each
+base model, controller, and view class are meant to differentiate how the data is used.
+
+Image Citations:
+----------------
+
+Dera, Tanner Van. Unsplash, Milwaukee, Wisconsin, 18 July 2018,
+unsplash.com/photos/oaQ2mTeaP7o. Accessed 25 June 2021.
+
+Mattia, Antonello. Antonello Mattia, 5 Oct. 2015,
+antonellomattia.it/come-aumentare-lautostima-carta-penna/.

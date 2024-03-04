@@ -1,0 +1,10 @@
+create layer 1
+current 1 
+load res/penciloriginal.ppm 
+blur
+save res/pencil.jpg
+create layer 2
+current 2
+load res/pencil.jpg
+sepia
+save res/pencil.png

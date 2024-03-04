@@ -1,0 +1,23 @@
+This file contains instructions on how to navigate the GUI in order use each option supported
+by the program.
+
+After inputting the appropriate command-line input in the terminal that goes to the GUI, a blank
+canvas with two menu drop-down options on the top-left appears:
+
+1. File
+2. Image
+
+For the File,
+- the Load option opens up the computer's repository for the user to search for either a .png, .jpg,
+or .ppm file to open up as part of a layer on the canvas.
+- the Save option opens up the computer's repository for the user to save the current image in the
+layer in any directory in the computer.
+- the Delete Layer option clears the canvas of the current layer (not working at the moment).
+- the Exit option closes the GUI.
+
+For the Image,
+- the Blur option blurs the current image being displayed.
+- the Sepia option applies a sepia filter to the current image being displayed.
+- the Sharpen option sharpens the current image being displayed.
+- the GrayScale option applies a grayscale filter the current image being displayed.
+- the Invisible option makes the current layer invisible to the user.
